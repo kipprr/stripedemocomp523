@@ -27,9 +27,15 @@ export default function App() {
       <h2>Let's checkout!</h2>
       <Router history={page}>
         <Switch>
-          <Route path="/checkout" component={StripeCheckout} />
-          <Route path="/success" component={Success} />
-          <Route exact path="/" component={SignUp}/>
+          <Route path="/checkout">
+          {<StripeCheckout/>} 
+            </Route>
+          <Route path="/success">
+          {<Success/>} 
+            </Route> />
+          <Route exact path="/">
+          {<SignUp/>} 
+            </Route>
         </Switch>
       </Router>
     </div>
