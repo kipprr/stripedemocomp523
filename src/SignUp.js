@@ -1,7 +1,5 @@
-import React, {useState, useContext} from 'react';
-import {auth, currentUser} from './index.js';
-import page from './App.js';
-import { UserContext } from './UserProvider.js';
+import React, {useState} from 'react';
+import {auth} from './index.js';
 
 
 async function proceedClick(email, password, confPassword, first, last){

@@ -5,8 +5,7 @@ import SignUp from './SignUp';
 import { 
   Router,
   Switch,
-  Route,
-  Redirect
+  Route
 } from "react-router-dom";
 import UserContext from './UserProvider';
 import { createBrowserHistory } from 'history';
@@ -17,8 +16,6 @@ import Success from './Success';
 export const page = createBrowserHistory();
 
 export default function App() {
-
-  const user = useContext(UserContext);
    
   return (
     <UserProvider>

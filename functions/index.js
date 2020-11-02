@@ -7,23 +7,9 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp();
 
-
+// Create user in firestore
 exports.createUser = functions.auth.user().onCreate(async (user) => {
-    //const email = user.email; // The email of the user.
-    //const uid = user.uid;
-    //const firstName = user.firstName;
-
-    // let data = {
-    //     email: email,
-    //     firstName: "",
-    //     lastName: "",
-    //   };
-
-    // let setDoc = db.collection('users').doc(uid).set(data);
-    // const newUserRef = ref.child(`/users/${uid}`)
     await admin.firestore().collection('users').doc(user.uid).set({ email: user.email });
-
-
     return; 
 });
 

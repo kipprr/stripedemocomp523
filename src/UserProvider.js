@@ -1,5 +1,5 @@
 import React, { Component, createContext } from "react";
-import { db, auth } from './index.js';
+import { auth } from './index.js';
 
 export const UserContext = React.createContext({user: null});
 

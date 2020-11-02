@@ -1,5 +1,5 @@
-import React, {useState, useContext} from 'react';
-import {db, currentUser} from './index.js';
+import React, {useContext} from 'react';
+import {db} from './index.js';
 import {loadStripe} from '@stripe/stripe-js';
 import UserContext from './UserProvider';
  
