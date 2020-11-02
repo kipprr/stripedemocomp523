@@ -1,13 +1,13 @@
 import React, {useState, useContext} from 'react';
 import {db, currentUser} from './index.js';
 import {loadStripe} from '@stripe/stripe-js';
+import UserContext from './UserProvider';
  
 const stripePromise = loadStripe('pk_test_51Hild4Ck7G164RWSPuLOiwl0ZRL4U3u9EmHJQegcFC5f16m22AZ1Hzb0UfjUQhlvCf5WXdgn7xBY6Pncs75FBjmw00lZY9IVjq');
 
 
-
 class StripeCheckout extends React.Component { 
-    //static contextType = UserContext;
+    static contextType = UserContext;
     
     
     
@@ -21,10 +21,10 @@ class StripeCheckout extends React.Component {
     // uses school price for now
     const docRef = await db
       .collection('customers')
-      .doc(currentUser.uid)
+      .doc(this.context.state.user)
       .collection('checkout_sessions')
       .add({
-        price: '/* price */',
+        price: 'price_1Hir87Ck7G164RWS600cMmlw',
         success_url: window.location.origin,
         cancel_url: window.location.origin,
       });

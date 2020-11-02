@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {auth} from './index.js';
+import {auth, currentUser} from './index.js';
 import page from './App.js';
 
 
