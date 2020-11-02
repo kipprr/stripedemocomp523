@@ -3,8 +3,8 @@ import {db} from './index.js';
 import {loadStripe} from '@stripe/stripe-js';
 import UserContext from './UserProvider';
  
-const stripePromise = loadStripe('pk_test_51Hild4Ck7G164RWSPuLOiwl0ZRL4U3u9EmHJQegcFC5f16m22AZ1Hzb0UfjUQhlvCf5WXdgn7xBY6Pncs75FBjmw00lZY9IVjq');
-
+const STRIPEPUBLICKEY = "pk_test_51Hild4Ck7G164RWSPuLOiwl0ZRL4U3u9EmHJQegcFC5f16m22AZ1Hzb0UfjUQhlvCf5WXdgn7xBY6Pncs75FBjmw00lZY9IVjq";
+const stripePromise = loadStripe(STRIPEPUBLICKEY);
 
 class StripeCheckout extends React.Component { 
     static contextType = UserContext;
