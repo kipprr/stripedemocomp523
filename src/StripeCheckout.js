@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {db} from './index.js';
 import {loadStripe} from '@stripe/stripe-js';
 import UserContext from './UserProvider';
+import user from './UserProvider';
  
 const STRIPEPUBLICKEY = "pk_test_51Hild4Ck7G164RWSPuLOiwl0ZRL4U3u9EmHJQegcFC5f16m22AZ1Hzb0UfjUQhlvCf5WXdgn7xBY6Pncs75FBjmw00lZY9IVjq";
 const stripePromise = loadStripe(STRIPEPUBLICKEY);
@@ -17,7 +18,7 @@ class StripeCheckout extends React.Component {
       const stripe = await stripePromise;
 
     // console.log(this.context);
-    // console.log(this.context.state);
+    // console.log(this.context);
     // console.log(this.context.state.user);
     // console.log(this.context.state.user.uid);
   
@@ -25,10 +26,10 @@ class StripeCheckout extends React.Component {
     
     const docRef = await db
       .collection('customers')
-      .doc('3CpZcLVF8yfLoPcZ1dYIhGNK6UE3')
+      .doc(user)
       .collection('checkout_sessions')
       .add({
-        price: 'price_1Hir87Ck7G164RWS600cMmlw',
+        price: 'price_1Hj6YICk7G164RWSuJ4CPUrU',
         success_url: window.location.origin + '/success',
         cancel_url: window.location.origin + '/checkout',
       });
