@@ -4,6 +4,12 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import firebase from 'firebase/app';
 import "firebase/database";
+import "firebase/auth";
+
+
+//const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
 
 // Set the configuration for your app
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -20,8 +26,10 @@ const config = {
 
 firebase.initializeApp(config);
 
-// Get a reference to the database service
-var database = firebase.database();
+export var db = firebase.firestore();
+
+export const auth = firebase.auth();
+export const currentUser = firebase.auth().currentUser;
 
 
 const rootElement = document.getElementById("root");
