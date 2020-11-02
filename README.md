@@ -2,7 +2,7 @@
 ## A demo to show how Stripe Checkout works with Firebase in a React app.
 
 ## How to Run Locally
-After cloning the repository if you want to run locally, navigate to the directory in terminal and run the following commands.
+After cloning the repository if you want to run locally, navigate to the directory in terminal and run the following commands. You'll need to have Node.js installed.
 
 ```
 npm install
