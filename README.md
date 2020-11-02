@@ -1,2 +1,2 @@
 # stripedemocomp523
-Created with CodeSandbox
+A demo to show how Stripe Checkout works with Firebase in a React app.
