@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {db} from './index.js';
 import {loadStripe} from '@stripe/stripe-js';
-import UserContext from './UserProvider';
-import user from './UserProvider';
+import {UserContext} from './UserProvider';
+
  
 const STRIPEPUBLICKEY = "pk_test_51Hild4Ck7G164RWSPuLOiwl0ZRL4U3u9EmHJQegcFC5f16m22AZ1Hzb0UfjUQhlvCf5WXdgn7xBY6Pncs75FBjmw00lZY9IVjq";
 const stripePromise = loadStripe(STRIPEPUBLICKEY);
@@ -16,17 +16,12 @@ class StripeCheckout extends React.Component {
       // Get Stripe.js instance
     
       const stripe = await stripePromise;
-
-    // console.log(this.context);
-    // console.log(this.context);
-    // console.log(this.context.state.user);
-    // console.log(this.context.state.user.uid);
   
     // Call your backend to create the Checkout Session
     
     const docRef = await db
       .collection('customers')
-      .doc(user)
+      .doc(this.context.user.uid)
       .collection('checkout_sessions')
       .add({
         price: 'price_1Hj6YICk7G164RWSuJ4CPUrU',

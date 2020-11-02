@@ -3,7 +3,6 @@ import { auth } from './index.js';
 
 export const UserContext = React.createContext({user: null});
 
-export const user = '3CpZcLVF8yfLoPcZ1dYIhGNK6UE3';
 
 class UserProvider extends Component {
     state = {
