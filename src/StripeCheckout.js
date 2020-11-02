@@ -15,18 +15,22 @@ class StripeCheckout extends React.Component {
       // Get Stripe.js instance
     
       const stripe = await stripePromise;
+
+    // console.log(this.context);
+    // console.log(this.context.state);
+    // console.log(this.context.state.user);
+    // console.log(this.context.state.user.uid);
   
     // Call your backend to create the Checkout Session
     
-    // uses school price for now
     const docRef = await db
       .collection('customers')
-      .doc(this.context.state.user)
+      .doc('3CpZcLVF8yfLoPcZ1dYIhGNK6UE3')
       .collection('checkout_sessions')
       .add({
         price: 'price_1Hir87Ck7G164RWS600cMmlw',
-        success_url: window.location.origin,
-        cancel_url: window.location.origin,
+        success_url: window.location.origin + '/success',
+        cancel_url: window.location.origin + '/checkout',
       });
     // Wait for the CheckoutSession to get attached by the extension
     docRef.onSnapshot((snap) => {

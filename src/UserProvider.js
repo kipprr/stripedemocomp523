@@ -1,7 +1,7 @@
 import React, { Component, createContext } from "react";
 import { db, auth } from './index.js';
 
-export const UserContext = createContext({user: null});
+export const UserContext = React.createContext({user: null});
 
 class UserProvider extends Component {
     state = {
@@ -11,7 +11,6 @@ class UserProvider extends Component {
     userUpdate = async (user) => {
         this.setState({user: user});
     }
-
 
     componentDidMount = () => {
         this._isMounted = true;
@@ -28,7 +27,7 @@ class UserProvider extends Component {
 
     render() {
         return(
-            <UserContext.Provider value={{state:this.state}}>
+            <UserContext.Provider value={{user:this.state.user}}>
                 {this.props.children}
             </UserContext.Provider>
         )

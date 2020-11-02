@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {auth, currentUser} from './index.js';
 import page from './App.js';
+import { UserContext } from './UserProvider.js';
 
 
 async function proceedClick(email, password, confPassword, first, last){
+
     
     if (password !== confPassword) {
         window.alert("Passwords don't match")
@@ -13,6 +15,7 @@ async function proceedClick(email, password, confPassword, first, last){
         try {
             // make new user in firebase
             let result = await auth.createUserWithEmailAndPassword(email, password);
+
 
             window.open('/checkout');
 
