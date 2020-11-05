@@ -24,7 +24,7 @@ class StripeCheckout extends React.Component {
       .doc(this.context.user.uid)
       .collection('checkout_sessions')
       .add({
-        price: 'price_1Hj6YICk7G164RWSuJ4CPUrU',
+        price: 'price_1Hj9qZCk7G164RWSwd9UrSEN',
         success_url: window.location.origin + '/success',
         cancel_url: window.location.origin + '/checkout',
       });

@@ -29,7 +29,7 @@ export default function App() {
             </Route>
           <Route path="/success">
           {<Success/>} 
-            </Route> />
+            </Route>
           <Route exact path="/">
           {<SignUp/>} 
             </Route>
